@@ -10,33 +10,33 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #0a0a0a;
             color: #fff;
             line-height: 1.6;
         }
-
+        
         .hero {
             text-align: center;
             padding: 4rem 2rem;
             background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
         }
-
+        
         h1 {
             font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 1rem;
         }
-
+        
         .tagline {
             font-size: 1.35rem;
             color: #ffffff;
             margin-bottom: 1rem;
             font-weight: 600;
         }
-
+        
         .subtitle {
             color: #f0f0f0;
             margin-bottom: 3rem;
@@ -44,24 +44,24 @@
             line-height: 1.8;
             margin-top: 0.5rem;
         }
-
+        
         .subtitle strong {
             color: #d97706;
         }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
-
+        
         .tabs {
             display: flex;
             gap: 2rem;
             justify-content: center;
             margin-bottom: 3rem;
         }
-
+        
         .tab {
             padding: 0.75rem 2rem;
             background: transparent;
@@ -73,24 +73,24 @@
             border-bottom: 2px solid transparent;
             transition: all 0.3s;
         }
-
+        
         .tab.active {
             color: #fff;
             border-bottom-color: #d97706;
         }
-
+        
         .recipes-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
-
+        
         @media (max-width: 768px) {
             .recipes-grid {
                 grid-template-columns: 1fr;
             }
         }
-
+        
         .recipe-card {
             background: #1a1a1a;
             border-radius: 16px;
@@ -98,21 +98,21 @@
             cursor: pointer;
             transition: transform 0.3s;
         }
-
+        
         .recipe-card:hover {
             transform: translateY(-8px);
         }
-
+        
         .recipe-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-
+        
         .recipe-content {
             padding: 1.5rem;
         }
-
+        
         .recipe-badge {
             display: inline-block;
             padding: 0.25rem 0.75rem;
@@ -124,26 +124,26 @@
             text-transform: uppercase;
             margin-bottom: 0.75rem;
         }
-
+        
         .recipe-name {
             font-size: 1.5rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
         }
-
+        
         .recipe-description {
             color: #999;
             font-size: 0.95rem;
             margin-bottom: 1rem;
         }
-
+        
         .recipe-meta {
             display: flex;
             gap: 1rem;
             font-size: 0.875rem;
             color: #666;
         }
-
+        
         .modal {
             display: none;
             position: fixed;
@@ -156,13 +156,13 @@
             padding: 2rem;
             overflow-y: auto;
         }
-
+        
         .modal.active {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
+        
         .modal-content {
             background: #1a1a1a;
             border-radius: 24px;
@@ -171,7 +171,7 @@
             max-height: 90vh;
             overflow-y: auto;
         }
-
+        
         .modal-close {
             position: absolute;
             top: 1rem;
@@ -185,38 +185,48 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-
+        
         .modal-header {
             position: relative;
         }
-
+        
         .modal-image {
             width: 100%;
             height: 300px;
             object-fit: cover;
         }
-
+        
         .modal-body {
             padding: 2rem;
         }
-
+        
         .detail-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
         }
-
+        
         .detail-section h3 {
             color: #d97706;
             margin-bottom: 1rem;
         }
-
+        
         .ingredient-item, .step-item {
             display: flex;
             gap: 0.5rem;
             margin-bottom: 0.75rem;
         }
 
+        .ingredient-item span:first-child {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .step-item span:first-child {
+            color: #d97706;
+            font-weight: bold;
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -230,9 +240,10 @@
 <body>
     <div class="hero">
         <h1>Robert's Coffee Cafe</h1>
-        <p class="tagline">Premium Homemade Coffee Creations</p> <p class="subtitle">
-            <strong>No artificial sweeteners. No fake flavors.</strong><br>
-            Trusted ingredients that elevate your daily ritual.
+        <p class="tagline">Premium Homemade Coffee Creations</p>
+        <p class="subtitle">
+            <strong>No artificial sweeteners. No seed oils. No fake flavors.</strong><br>
+            Just real ingredients that elevate your daily ritual.
         </p>
     </div>
 
@@ -261,183 +272,252 @@
                 {
                     name: "Cinnamon Brown Sugar",
                     badge: "Robert's Favorite",
-                    image: "./optimized/cinnamon-brown-sugar-large.webp",
-                    description: "Rich cinnamon and brown sugar creamer for a cozy morning ritual",
-                    prep: "5 min",
-                    yield: "16 oz",
+                    image: "./optimized/cinnamon-brown-sugar-thumb.jpg",
+                    description: "Rich and creamy with warm spice notes.",
+                    time: "10 min",
+                    difficulty: "Easy",
                     ingredients: [
+                        "1 can (14oz) sweetened condensed milk",
+                        "1 cup half and half",
+                        "1/2 cup brown sugar",
+                        "2 tablespoons cane sugar",
                         "1 cup heavy cream",
-                        "3 tbsp brown sugar",
-                        "1 tsp cinnamon",
-                        "Pinch of sea salt"
+                        "1/2 teaspoons ground cinnamon",
+                        "Pinch of salt"
                     ],
                     instructions: [
-                        "Whip heavy cream until soft peaks form",
-                        "Add brown sugar and cinnamon gradually",
-                        "Fold in salt and vanilla",
-                        "Store in glass jar for up to 5 days"
+                        "Combine cream, sugars, cinnamon, and salt in saucepan",
+                        "Heat until sugar dissolves (5 min)",
+                        "Cool for 5 minutes",
+                        "Mix condensed milk with half and half",
+                        "Add cinnamon mixture and stir",
+                        "Store in fridge up to 2 weeks"
                     ]
                 },
                 {
-                    name: "Vanilla Bean",
-                    badge: "Classic",
-                    image: "./optimized/vanilla-bean-large.webp",
-                    description: "Pure vanilla elegance in every sip",
-                    prep: "10 min",
-                    yield: "16 oz",
+                    name: "Pure Vanilla",
+                    badge: "Cleanest Recipe",
+                    image: "./optimized/vanilla-bean-thumb.jpg",
+                    description: "Beautifully simple. Three ingredients, infinite satisfaction.",
+                    time: "5 min",
+                    difficulty: "Easiest",
                     ingredients: [
-                        "1 cup heavy cream",
-                        "1 vanilla bean (scraped)",
-                        "2 tbsp maple syrup",
-                        "Pinch of sea salt"
+                        "1 can (14oz) sweetened condensed milk",
+                        "1.5 cups half and half",
+                        "2 tablespoons pure vanilla extract"
                     ],
                     instructions: [
-                        "Scrape vanilla bean pods",
-                        "Heat cream gently with vanilla",
-                        "Add maple syrup and salt",
-                        "Cool and store in refrigerator"
+                        "Mix condensed milk with half and half",
+                        "Add vanilla extract",
+                        "Shake well",
+                        "Store in fridge up to 2 weeks"
                     ]
                 },
                 {
-                    name: "Honey Lavender",
-                    badge: "Seasonal",
-                    image: "./optimized/honey-lavender-large.webp",
-                    description: "Floral honey meets calming lavender",
-                    prep: "15 min",
-                    yield: "16 oz",
+                    name: "Maple Glazed Donut",
+                    badge: "Sweet Indulgence",
+                    image: "./optimized/maple-cinnamon-thumb.jpg",
+                    description: "Like dunking a glazed donut in your coffee.",
+                    time: "10 min",
+                    difficulty: "Easy",
                     ingredients: [
-                        "1 cup heavy cream",
-                        "3 tbsp raw honey",
-                        "1 tsp dried lavender",
-                        "Splash of vanilla"
+                        "1 can (14oz) sweetened condensed milk",
+                        "1.5 cups heavy cream",
+                        "3/4 cup whole milk",
+                        "1/3 cup pure maple syrup",
+                        "2 teaspoons vanilla extract",
+                        "1 teaspoon cinnamon",
+                        "2 tablespoons melted butter"
                     ],
                     instructions: [
-                        "Steep lavender in warm cream",
-                        "Strain and cool completely",
-                        "Whisk in honey until smooth",
-                        "Refrigerate before use"
+                        "Mix condensed milk, cream, and milk",
+                        "Add maple syrup, vanilla, cinnamon",
+                        "Whisk in cooled melted butter",
+                        "Shake well to combine",
+                        "Store in fridge up to 2 weeks"
+                    ]
+                },
+                {
+                    name: "Caramel Apple Crisp",
+                    badge: "Fall Favorite",
+                    image: "./optimized/honey-lavender-thumb.jpg",
+                    description: "Liquid apple pie with caramel notes.",
+                    time: "20 min",
+                    difficulty: "Medium",
+                    ingredients: [
+                        "1 can (14oz) dulce de leche",
+                        "1.5 cups half and half",
+                        "1 cup apple cider",
+                        "1/2 teaspoon cinnamon",
+                        "1 teaspoon vanilla extract"
+                    ],
+                    instructions: [
+                        "Reduce apple cider by half (15 min)",
+                        "Cool slightly",
+                        "Mix dulce de leche with half and half",
+                        "Add reduced cider and vanilla",
+                        "Shake well",
+                        "Store in fridge up to 2 weeks"
+                    ]
+                },
+                {
+                    name: "Pumpkin Spice",
+                    badge: "Fall Favorite",
+                    description: "Warm autumn spices in every sip.",
+                    time: "15 min",
+                    difficulty: "Easy",
+                    image: "./optimized/pumpkin-spice-thumb.jpg",
+                    ingredients: [
+                        "1 can (14oz) sweetened condensed milk",
+                        "1 cup half and half", 
+                        "2 teaspoons vanilla extract",
+                        "1 teaspoon cinnamon",
+                        "1/2 teaspoon nutmeg",
+                        "1/4 teaspoon ground ginger",
+                        "1/8 teaspoon ground cloves"
+                    ],
+                    instructions: [
+                        "Mix all spices in small bowl",
+                        "Combine milk and half and half",
+                        "Add vanilla and spice mixture", 
+                        "Whisk until smooth",
+                        "Store in fridge up to 2 weeks"
+                    ]
+                },
+                {
+                    name: "Coconut Vanilla",
+                    badge: "Tropical Twist",
+                    description: "Creamy coconut with pure vanilla notes.",
+                    time: "10 min",
+                    difficulty: "Easy",
+                    image: "./optimized/vanilla-bean-thumb.jpg",
+                    ingredients: [
+                        "1 can (14oz) coconut milk",
+                        "1/2 cup half and half",
+                        "1/3 cup maple syrup",
+                        "2 teaspoons vanilla extract",
+                        "Pinch of sea salt"
+                    ],
+                    instructions: [
+                        "Shake coconut milk well",
+                        "Mix with half and half",
+                        "Add maple syrup and vanilla",
+                        "Add pinch of salt",
+                        "Whisk until smooth",
+                        "Store in fridge up to 1 week"
                     ]
                 }
             ],
             syrups: [
                 {
-                    name: "Simple Syrup",
-                    badge: "Essential",
-                    image: "./optimized/simple-syrup-large.webp",
-                    description: "The foundation of perfect coffee sweetness",
-                    prep: "10 min",
-                    yield: "8 oz",
+                    name: "Brown Sugar Simple Syrup",
+                    badge: "Best for Iced",
+                    description: "Perfect for cold brew.",
+                    time: "15 min",
+                    difficulty: "Easy",
+                    image: "./optimized/simple-syrup-thumb.jpg",
                     ingredients: [
-                        "1 cup sugar",
                         "1 cup water",
-                        "Pinch of sea salt"
+                        "1 cup dark brown sugar",
+                        "1-2 tablespoons maple syrup",
+                        "1 teaspoon vanilla extract",
+                        "Pinch of salt"
                     ],
                     instructions: [
-                        "Combine sugar and water in saucepan",
-                        "Heat until sugar dissolves completely",
-                        "Add pinch of salt",
-                        "Cool and store in glass bottle"
+                        "Combine water, sugar, maple syrup, salt",
+                        "Heat until dissolved (10-15 min)",
+                        "Cool and add vanilla",
+                        "Store in fridge up to 4 weeks"
                     ]
                 },
                 {
-                    name: "Maple Cinnamon",
-                    badge: "Fall Favorite",
-                    image: "./optimized/maple-cinnamon-large.webp",
-                    description: "Warm maple with a cinnamon kick",
-                    prep: "15 min",
-                    yield: "8 oz",
+                    name: "Vanilla Simple Syrup",
+                    badge: "Most Versatile",
+                    description: "Clean and classic.",
+                    time: "10 min",
+                    difficulty: "Easiest",
+                    image: "./optimized/simple-syrup-thumb.jpg",
                     ingredients: [
-                        "1 cup maple syrup",
-                        "2 tbsp water",
-                        "1.5 tsp cinnamon",
-                        "Pinch of nutmeg"
-                    ],
-                    instructions: [
-                        "Warm maple syrup gently",
-                        "Add cinnamon and nutmeg",
-                        "Stir well and cool",
-                        "Use 1-2 tbsp per coffee"
-                    ]
-                },
-                {
-                    name: "Pumpkin Spice",
-                    badge: "Seasonal",
-                    image: "./optimized/pumpkin-spice-large.webp",
-                    description: "Autumn in a bottle",
-                    prep: "15 min",
-                    yield: "8 oz",
-                    ingredients: [
+                        "1 cup water",
                         "1 cup sugar",
-                        "3/4 cup water",
-                        "1 tbsp pumpkin puree",
-                        "1 tsp pumpkin pie spice"
+                        "2 tablespoons vanilla extract"
                     ],
                     instructions: [
-                        "Combine sugar and water, heat until dissolved",
-                        "Whisk in pumpkin puree smoothly",
-                        "Add pumpkin pie spice and stir",
-                        "Cool and store properly"
+                        "Heat water and sugar until dissolved",
+                        "Cool and add vanilla",
+                        "Store in fridge up to 4 weeks"
                     ]
                 }
             ],
             coldcoffee: [
                 {
-                    name: "Cold Brew",
-                    badge: "Smooth & Bold",
-                    image: "./optimized/cold-brew-large.webp",
-                    description: "Smooth, cold-steeped perfection",
-                    prep: "24 hours",
-                    yield: "32 oz",
+                    name: "Blueberry Iced Coffee",
+                    badge: "Summer Special",
+                    description: "Fresh blueberry flavor with smooth coffee.",
+                    time: "15 min",
+                    difficulty: "Easy",
+                    image: "./optimized/cold-brew-thumb.jpg",
                     ingredients: [
-                        "1 cup coarse coffee grounds",
-                        "4 cups cold filtered water",
-                        "Optional: sea salt"
+                        "1 cup strong cold brew coffee",
+                        "1/2 cup fresh blueberries",
+                        "2-3 tablespoons honey or maple syrup",
+                        "1/4 cup milk of choice", 
+                        "Ice cubes",
+                        "Extra blueberries for garnish"
                     ],
                     instructions: [
-                        "Add grounds to large jar",
-                        "Pour cold water over grounds",
-                        "Stir gently, cover and refrigerate",
-                        "Strain after 24 hours through cheesecloth"
-                    ]
-                },
-                {
-                    name: "Cinnamon Cold Foam",
-                    badge: "Silky & Light",
-                    image: "./optimized/cinnamon-cold-foam-large.webp",
-                    description: "Airy cinnamon foam on cold brew",
-                    prep: "5 min",
-                    yield: "12 oz",
-                    ingredients: [
-                        "1/2 cup cold milk or cream",
-                        "1 tsp cinnamon",
-                        "1 tsp vanilla",
-                        "1 tbsp sugar"
-                    ],
-                    instructions: [
-                        "Pour cold milk into frother",
-                        "Add cinnamon, vanilla, and sugar",
-                        "Froth until tripled in volume",
-                        "Top cold brew with fluffy foam"
-                    ]
-                },
-                {
-                    name: "Iced Vanilla Latte",
-                    badge: "Creamy Classic",
-                    image: "./optimized/iced-vanilla-latte-large.webp",
-                    description: "Silky vanilla in an iced glass",
-                    prep: "3 min",
-                    yield: "12 oz",
-                    ingredients: [
-                        "2 oz espresso (or strong coffee)",
-                        "8 oz cold milk",
-                        "1 tbsp vanilla syrup",
-                        "Ice cubes"
-                    ],
-                    instructions: [
-                        "Prepare espresso and let cool slightly",
+                        "Muddle blueberries with sweetener",
+                        "Strain to get blueberry syrup", 
                         "Fill glass with ice",
-                        "Add vanilla syrup to glass",
-                        "Pour espresso, then milk. Stir and enjoy!"
+                        "Add cold brew and blueberry syrup",
+                        "Top with milk",
+                        "Garnish with fresh blueberries"
+                    ]
+                },
+                {
+                    name: "Vanilla Cold Brew Concentrate",
+                    badge: "Make Ahead",
+                    description: "Perfect base for iced coffee drinks.",
+                    time: "12 hours",
+                    difficulty: "Easy",
+                    image: "./optimized/cold-brew-thumb.jpg",
+                    ingredients: [
+                        "1 cup coarse ground coffee",
+                        "4 cups cold water",
+                        "2 teaspoons vanilla extract",
+                        "1 tablespoon brown sugar (optional)"
+                    ],
+                    instructions: [
+                        "Mix coffee grounds and water",
+                        "Steep 12-24 hours at room temp", 
+                        "Strain through fine mesh",
+                        "Add vanilla and sugar",
+                        "Store in fridge up to 2 weeks",
+                        "Dilute 1:1 with water or milk"
+                    ]
+                },
+                {
+                    name: "Coconut Iced Latte",
+                    badge: "Tropical Vibes",
+                    description: "Creamy coconut meets rich espresso.",
+                    time: "5 min",
+                    difficulty: "Easy",
+                    image: "./optimized/iced-vanilla-latte-thumb.jpg",
+                    ingredients: [
+                        "2 shots espresso or 1/2 cup strong coffee",
+                        "1/2 cup coconut milk",
+                        "2 tablespoons coconut cream",
+                        "1 tablespoon maple syrup",
+                        "Ice cubes",
+                        "Toasted coconut flakes"
+                    ],
+                    instructions: [
+                        "Brew espresso and let cool",
+                        "Mix coconut milk and cream",
+                        "Add maple syrup to taste",
+                        "Fill glass with ice", 
+                        "Pour coffee over ice",
+                        "Top with coconut mixture and flakes"
                     ]
                 }
             ]
@@ -445,69 +525,65 @@
 
         let currentTab = 'creamers';
 
-        function renderRecipes(tab) {
+        function switchTab(type) {
+            currentTab = type;
+            document.querySelectorAll('.tab').forEach(tab => {
+                const tabText = tab.textContent.toLowerCase().replace(/\s+/g, '');
+                tab.classList.toggle('active', tabText === type);
+            });
+            renderRecipes();
+        }
+
+        function renderRecipes() {
             const grid = document.getElementById('recipes-grid');
-            grid.innerHTML = '';
-
-            recipes[tab].forEach(recipe => {
-                const card = document.createElement('div');
-                card.className = 'recipe-card';
-                card.onclick = () => openModal(recipe);
-
-                card.innerHTML = `
-                    <img src="${recipe.image}" alt="${recipe.name}" class="recipe-image">
+            grid.innerHTML = recipes[currentTab].map((r, i) => `
+                <div class="recipe-card" onclick="openModal(${i})">
+                    ${r.image ? `<img class="recipe-image" src="${r.image}">` : ''}
                     <div class="recipe-content">
-                        <span class="recipe-badge">${recipe.badge}</span>
-                        <h2 class="recipe-name">${recipe.name}</h2>
-                        <p class="recipe-description">${recipe.description}</p>
+                        <span class="recipe-badge">${r.badge}</span>
+                        <h3 class="recipe-name">${r.name}</h3>
+                        <p class="recipe-description">${r.description}</p>
                         <div class="recipe-meta">
-                            <span>⏱️ ${recipe.prep}</span>
-                            <span>🔖 ${recipe.yield}</span>
+                            <span>⏱ ${r.time}</span>
+                            <span>📊 ${r.difficulty}</span>
                         </div>
                     </div>
-                `;
-
-                grid.appendChild(card);
-            });
+                </div>
+            `).join('');
         }
 
-        function switchTab(tab) {
-            currentTab = tab;
-            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-            event.target.classList.add('active');
-            renderRecipes(tab);
-        }
-
-        function openModal(recipe) {
-            const modal = document.getElementById('modal');
-            document.getElementById('modal-image').src = recipe.image;
-
-            let ingredientsList = recipe.ingredients.map(ing => `<div class="ingredient-item">✓ ${ing}</div>`).join('');
-            let instructionsList = recipe.instructions.map((step, idx) => `<div class="step-item"><strong>${idx + 1}.</strong> ${step}</div>`).join('');
-
+        function openModal(index) {
+            const recipe = recipes[currentTab][index];
+            document.getElementById('modal-image').src = recipe.image || '';
             document.getElementById('modal-body').innerHTML = `
-                <h1 style="color: #d97706; margin-bottom: 1rem;">${recipe.name}</h1>
+                <h2>${recipe.name}</h2>
                 <div class="detail-grid">
-                    <div>
+                    <div class="detail-section">
                         <h3>Ingredients</h3>
-                        ${ingredientsList}
+                        ${recipe.ingredients.map(i => `
+                            <div class="ingredient-item">
+                                <span>✓</span><span>${i}</span>
+                            </div>
+                        `).join('')}
                     </div>
-                    <div>
+                    <div class="detail-section">
                         <h3>Instructions</h3>
-                        ${instructionsList}
+                        ${recipe.instructions.map((s, i) => `
+                            <div class="step-item">
+                                <span>${i+1}.</span><span>${s}</span>
+                            </div>
+                        `).join('')}
                     </div>
                 </div>
             `;
-
-            modal.classList.add('active');
+            document.getElementById('modal').classList.add('active');
         }
 
         function closeModal() {
             document.getElementById('modal').classList.remove('active');
         }
 
-        // Initialize
-        renderRecipes(currentTab);
+        renderRecipes();
     </script>
 </body>
 </html>
